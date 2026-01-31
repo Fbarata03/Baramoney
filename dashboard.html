@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Baramoney</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="dashboard-body">
+    <aside class="sidebar-nav">
+        <div class="sidebar-header" style="margin-bottom:16px;">
+            <div class="brand-logo" style="font-size:1.6rem;">
+                <span class="brand-text">baramoney</span>
+            </div>
+        </div>
+        <nav class="menu-list">
+            <a href="#" class="menu-item active" id="link-home"><i data-lucide="home"></i><span>Home</span></a>
+            <a href="#" class="menu-item" id="link-profile"><i data-lucide="user"></i><span>Perfil</span></a>
+            <a href="#" class="menu-item" id="link-robots"><i data-lucide="zap"></i><span>Robôs VIP</span></a>
+            <a href="#" class="menu-item" id="link-admin"><i data-lucide="shield-check"></i><span>Admin</span></a>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="index.html" class="logout-btn"><i data-lucide="log-out"></i><span>Sair</span></a>
+        </div>
+    </aside>
+    <main class="dashboard-main">
+        <div class="top-bar" style="margin-bottom:16px;">
+            <div class="status-pill"><span class="status-dot pulse"></span>SISTEMA ONLINE</div>
+        </div>
+        <div id="home-section">
+            <div class="game-dashboard">
+                <div class="game-header-section">
+                    <div>
+                        <h1 class="game-title">AVIATRIX - Crash Game</h1>
+                        <p class="game-subtitle">Previsão de Alcance em Tempo Real</p>
+                    </div>
+                    <div class="status-pill">
+                        <span class="status-dot pulse"></span>
+                        AGUARDANDO PRÓXIMO VOO
+                    </div>
+                </div>
+                <div class="game-grid-layout">
+                    <div class="game-main-col">
+                        <div class="timer-card">
+                            <div class="timer-icon-wrapper">
+                                <i data-lucide="target" class="timer-icon"></i>
+                            </div>
+                            <div class="timer-content">
+                                <h2>Próximo voo em: <span id="countdown">0s</span></h2>
+                                <p>Prepare sua aposta!</p>
+                            </div>
+                        </div>
+                        <div class="prediction-card">
+                            <div class="card-label">
+                                <i data-lucide="activity"></i>
+                                Previsão da IA
+                            </div>
+                            <div class="prediction-box">
+                                <div class="prediction-value">
+                                    <div class="prediction-number">--</div>
+                                </div>
+                                <div class="prediction-status">
+                                    <span class="badge-soft">Analisando padrões em tempo real</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history-card">
+                            <div class="card-label">
+                                <i data-lucide="list"></i>
+                                Últimos Crash
+                            </div>
+                            <div class="history-list"></div>
+                        </div>
+                    </div>
+                    <div class="bot-side">
+                        <div class="stats-card">
+                            <h3>Estatísticas</h3>
+                            <div class="stat-row">
+                                <span>Sinais Hoje:</span>
+                                <strong id="avi-signals-count">--</strong>
+                            </div>
+                            <div class="stat-row">
+                                <span>Taxa de Acerto:</span>
+                                <strong id="avi-accuracy" style="color:#10b981;">--</strong>
+                            </div>
+                            <div class="stat-row">
+                                <span>Status IA:</span>
+                                <strong style="color:#10b981;">ONLINE</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="profile-section" class="section-card hidden">
+            <h2>Perfil</h2>
+            <div style="margin-top:8px;">
+                <label>Email do usuário</label>
+                <input id="user-email-input" type="text" style="margin-top:6px;width:100%;padding:10px;border-radius:10px;border:1px solid #334155;background:#0b1220;color:#f8fafc">
+            </div>
+            <div style="margin-top:20px;">
+                <a href="index.html" class="btn" style="background:#ef4444;color:white;display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;">
+                    <i data-lucide="log-out"></i> Sair da Conta
+                </a>
+            </div>
+        </div>
+        <div id="robots-section" class="section-card hidden">
+            <h2>Robôs VIP</h2>
+            <div class="robots-header" style="margin-bottom:16px;">
+                <h3 style="font-size:1.2rem;">Selecione um jogo</h3>
+                <span class="robots-pipe">|</span>
+                <span style="color:#94a3b8;">Sinais IA em tempo real</span>
+            </div>
+            <div class="robots-gallery">
+                <a href="#" class="robot-thumb-card" data-robot="bacbo">
+                    <div class="robot-thumb-bg" style="background-image:url('https://www.livedealer.org/dev/wp-content/uploads/2022/01/BacBo-feature.jpg');"></div>
+                    <div class="robot-thumb-overlay"></div>
+                    <div class="robot-thumb-title">
+                        <span>BAC BO</span>
+                        <small>Evolution</small>
+                    </div>
+                    <div class="robot-thumb-footer">
+                        <div>
+                            <div class="robot-thumb-label">Sinais Prontos</div>
+                            <div class="robot-thumb-category">AZUL vs VERMELHO</div>
+                        </div>
+                        <i data-lucide="arrow-right"></i>
+                    </div>
+                </a>
+                <a href="#" class="robot-thumb-card" data-robot="megasicbac">
+                    <div class="robot-thumb-bg" style="background-image:url('https://www.livedealer.org/dev/wp-content/uploads/2024/07/MegaSicBac-placebets.jpg');"></div>
+                    <div class="robot-thumb-overlay"></div>
+                    <div class="robot-thumb-title">
+                        <span>MEGA SIC BAC</span>
+                        <small>Casino</small>
+                    </div>
+                    <div class="robot-thumb-footer">
+                        <div>
+                            <div class="robot-thumb-label">Análise de Tendência</div>
+                            <div class="robot-thumb-category">JOGADOR • EMPATE • CASA</div>
+                        </div>
+                        <i data-lucide="arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div id="admin-section" class="section-card hidden">
+            <h2>Painel Admin</h2>
+            <div style="display:flex;gap:10px;align-items:flex-end;margin-top:10px;">
+                <div style="flex:1;">
+                    <label>Email do usuário</label>
+                    <input id="admin-email-input" type="text" style="margin-top:6px;width:100%;padding:10px;border-radius:10px;border:1px solid #334155;background:#0b1220;color:#f8fafc">
+                </div>
+                <div>
+                    <label>Jogo</label>
+                    <select id="admin-game-select" style="margin-top:6px;padding:10px;border-radius:10px;border:1px solid #334155;background:#0b1220;color:#f8fafc">
+                        <option value="bacbo">BAC BO</option>
+                        <option value="megasicbac">MEGA SIC BAC</option>
+                    </select>
+                </div>
+                <button id="admin-activate-btn" class="btn" style="background:#10b981;">Ativar Jogo</button>
+                <button id="admin-deactivate-btn" class="btn" style="background:#ef4444;">Desativar Jogo</button>
+            </div>
+            <div class="section-card" style="margin-top:12px;">
+                <strong>Emails Ativados (por jogo)</strong>
+                <ul id="activation-list" style="margin-top:10px;list-style:none;padding:0;"></ul>
+            </div>
+        </div>
+        <div id="bacbo-game-section" class="hidden">
+            <div class="bot-dashboard">
+                <div class="bot-header">
+                    <div style="display:flex;align-items:center;gap:15px;">
+                        <button class="back-btn" onclick="navigateTo('robots')" title="Voltar" style="background:rgba(255,255,255,0.1);border:none;color:white;cursor:pointer;padding:8px;border-radius:50%;display:flex;align-items:center;justify-content:center;"><i data-lucide="arrow-left"></i></button>
+                        <div>
+                            <h1 class="bot-title">BAC BO - Evolution</h1>
+                            <p class="bot-subtitle">Sinais em Tempo Real</p>
+                        </div>
+                    </div>
+                    <div class="status-pill">
+                        <span class="status-dot pulse"></span>
+                        SISTEMA ATIVO
+                    </div>
+                </div>
+                <div class="bot-grid">
+                    <div class="bot-main">
+                        <div class="analysis-card">
+                            <div class="card-label">
+                                <i data-lucide="activity"></i>
+                                Análise em Tempo Real
+                            </div>
+                            <div class="signal-row">
+                                <div class="signal-side">
+                                    <span class="signal-dot blue"></span>
+                                    <span>AZUL</span>
+                                </div>
+                                <div class="signal-bar">
+                                    <div id="bacbo-blue-fill" class="signal-fill blue" style="width:45%"></div>
+                                </div>
+                                <div class="signal-value" id="bacbo-blue-pct">45%</div>
+                            </div>
+                            <div class="signal-row">
+                                <div class="signal-side">
+                                    <span class="signal-dot red"></span>
+                                    <span>VERMELHO</span>
+                                </div>
+                                <div class="signal-bar">
+                                    <div id="bacbo-red-fill" class="signal-fill red" style="width:55%"></div>
+                                </div>
+                                <div class="signal-value" id="bacbo-red-pct">55%</div>
+                            </div>
+                            <div class="recommend-card" id="bacbo-reco">
+                                <div class="recommend-title">
+                                    <i data-lucide="trending-up"></i>
+                                    RECOMENDAÇÃO DE APOSTA
+                                </div>
+                                <div class="recommend-main">
+                                    <span id="bacbo-reco-text">APOSTAR NO VERMELHO</span>
+                                </div>
+                                <div class="recommend-meta">
+                                    Probabilidade: <span id="bacbo-prob">55%</span>
+                                    <span class="confidence-badge" id="bacbo-confidence">Confiança BAIXA</span>
+                                </div>
+                                <div class="recommend-update">Última atualização: <span id="bacbo-lastupdate">--:--:--</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bot-side">
+                        <div class="history-card">
+                            <h3>Histórico de Sinais</h3>
+                            <div class="history-list" id="bacbo-history"></div>
+                        </div>
+                        <div class="stats-card">
+                            <h3>Estatísticas</h3>
+                            <div class="stat-row"><span>Sinais Hoje:</span><strong id="bacbo-signals-count">0</strong></div>
+                            <div class="stat-row"><span>Taxa de Acerto:</span><strong id="bacbo-accuracy" style="color:#10b981;">--</strong></div>
+                            <div class="stat-row"><span>Status IA:</span><strong style="color:#10b981;">ONLINE</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="megasicbac-game-section" class="hidden">
+            <div class="bot-dashboard">
+                <div class="bot-header">
+                    <div style="display:flex;align-items:center;gap:15px;">
+                        <button class="back-btn" onclick="navigateTo('robots')" title="Voltar" style="background:rgba(255,255,255,0.1);border:none;color:white;cursor:pointer;padding:8px;border-radius:50%;display:flex;align-items:center;justify-content:center;"><i data-lucide="arrow-left"></i></button>
+                        <div>
+                            <h1 class="bot-title">MEGA SIC BAC - Pragmatic</h1>
+                            <p class="bot-subtitle">Análise e Entrada em Tempo Real</p>
+                        </div>
+                    </div>
+                    <div class="status-pill"><span class="status-dot pulse"></span>SISTEMA ATIVO</div>
+                </div>
+                <div class="msb-panel">
+                    <div class="msb-box player">
+                        <div class="msb-percent" id="msb-player-pct">--</div>
+                        <div class="msb-label">JOGADOR</div>
+                    </div>
+                    <div class="msb-box tie">
+                        <div class="msb-percent" id="msb-tie-pct">--</div>
+                        <div class="msb-label">EMPATE</div>
+                    </div>
+                    <div class="msb-box bank">
+                        <div class="msb-percent" id="msb-bank-pct">--</div>
+                        <div class="msb-label">CASA</div>
+                    </div>
+                </div>
+                <div class="msb-center">
+                    <div class="msb-entry">
+                        <span id="msb-entry-status">A CONFIRMAR (10s)</span>
+                        <div class="msb-entry-target" id="msb-reco-target">--</div>
+                    </div>
+                    <button class="msb-open-btn disabled" id="msb-open-btn" disabled>ABRIR JOGO</button>
+                    <div class="msb-assert">ASSERTIVIDADE: <span id="msb-assertividade">--</span></div>
+                </div>
+                <div class="bot-grid">
+                    <div class="bot-main">
+                        <div class="analysis-card">
+                            <div class="card-label"><i data-lucide="bar-chart-3"></i>Análise em Tempo Real</div>
+                            <div class="recommend-update">Última atualização: <span id="msb-lastupdate">--:--:--</span></div>
+                        </div>
+                    </div>
+                    <div class="bot-side">
+                        <div class="history-card"><h3>Histórico de Sinais</h3><div class="history-list" id="msb-history"></div></div>
+                        <div class="stats-card">
+                            <h3>Estatísticas</h3>
+                            <div class="stat-row"><span>Sinais Hoje:</span><strong id="msb-signals-count">0</strong></div>
+                            <div class="stat-row"><span>Taxa de Acerto:</span><strong id="msb-accuracy" style="color:#10b981;">--</strong></div>
+                            <div class="stat-row"><span>Status IA:</span><strong style="color:#10b981;">ONLINE</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        lucide.createIcons();
+        const userEmail = localStorage.getItem('userEmail') || 'usuario@exemplo.com';
+        const isAdmin = (localStorage.getItem('admin:'+userEmail)==='true' || (function(){try{return JSON.parse(localStorage.getItem('admin_list')||'[]').includes(userEmail);}catch{return false;}})());
+        if (localStorage.getItem('reg_deposit_link_opened_v2')!=='true' && !isAdmin){ alert('Acesso restrito: conclua cadastro e depósito.'); window.location.href='login.html'; }
+        const emailInput = document.getElementById('user-email-input');
+        if (emailInput) emailInput.value = userEmail;
+        const adminMenu = document.getElementById('link-admin');
+        if (adminMenu && !isAdmin) { adminMenu.classList.add('hidden'); }
+        function hasGameAccess(email, game){ return localStorage.getItem('activation_game:'+email+':'+game)==='true'; }
+        function navigateTo(sectionId) {
+            if (sectionId==='bacbo-game' && !isAdmin && !hasGameAccess(userEmail,'bacbo')) { alert('Acesso a BAC BO pendente de ativação pelo admin.'); return; }
+            if (sectionId==='megasicbac-game' && !isAdmin && !hasGameAccess(userEmail,'megasicbac')) { alert('Acesso a MEGA SIC BAC pendente de ativação pelo admin.'); return; }
+            
+            // Game Mode Toggle
+            if (sectionId === 'bacbo-game' || sectionId === 'megasicbac-game') {
+                document.body.classList.add('game-mode-active');
+            } else {
+                document.body.classList.remove('game-mode-active');
+            }
+
+            document.querySelectorAll('.menu-item').forEach(i=>i.classList.remove('active'));
+            const link = document.getElementById('link-' + sectionId);
+            if (link) link.classList.add('active');
+            document.getElementById('home-section').classList.add('hidden');
+            document.getElementById('profile-section').classList.add('hidden');
+            document.getElementById('robots-section').classList.add('hidden');
+            document.getElementById('admin-section').classList.add('hidden');
+            document.getElementById('bacbo-game-section').classList.add('hidden');
+            document.getElementById('megasicbac-game-section').classList.add('hidden');
+            document.getElementById(sectionId + '-section').classList.remove('hidden');
+            if (sectionId === 'bacbo-game') initBacboBot();
+            if (sectionId === 'megasicbac-game') initMegaSicBacBot();
+            if (sectionId === 'admin') { initAdminPanel(); }
+        }
+        document.getElementById('link-home').addEventListener('click', e=>{e.preventDefault();navigateTo('home');});
+        document.getElementById('link-profile').addEventListener('click', e=>{e.preventDefault();navigateTo('profile');});
+        document.getElementById('link-robots').addEventListener('click', e=>{e.preventDefault();navigateTo('robots');});
+        document.getElementById('link-admin').addEventListener('click', e=>{e.preventDefault();navigateTo('admin');});
+        document.querySelectorAll('.robot-thumb-card').forEach(card=>{
+            card.addEventListener('click', e=>{
+                e.preventDefault();
+                const r = card.dataset.robot;
+                if (r === 'bacbo') navigateTo('bacbo-game');
+                else if (r === 'megasicbac') navigateTo('megasicbac-game');
+                else if (r === 'aviatrix') navigateTo('home');
+                else if (r === 'chickenroad') navigateTo('home');
+            });
+        });
+        function initGameSimulation() {
+            const countdownEl = document.getElementById('countdown');
+            const statusPill = document.querySelector('#home-section .status-pill');
+            const predictionNumber = document.querySelector('.prediction-number');
+            const historyList = document.querySelector('#home-section .history-list');
+            let timeLeft = 15;
+            let isFlying = false;
+            setInterval(()=>{if(!isFlying){if(timeLeft>0){timeLeft--;countdownEl.innerText=timeLeft+'s';statusPill.innerHTML='<span class=\"status-dot pulse\"></span>AGUARDANDO PRÓXIMO VOO';statusPill.style.color='#10b981';statusPill.style.borderColor='#10b981';}else{isFlying=true;startFlight();}}},1000);
+            function startFlight(){statusPill.innerHTML='<span class=\"status-dot\" style=\"background:#a855f7\"></span>VOANDO...';statusPill.style.color='#a855f7';statusPill.style.borderColor='#a855f7';countdownEl.innerText='---';const flightDuration=Math.floor(Math.random()*7000)+3000;setTimeout(()=>{endFlight();},flightDuration);}
+            function endFlight(){isFlying=false;timeLeft=15;const crashValue=(Math.random()*5+1).toFixed(2)+'x';const newItem=document.createElement('div');newItem.className='history-item';newItem.innerText=crashValue;const val=parseFloat(crashValue);if(val<2.0){newItem.style.borderColor='#ef4444'}else if(val>=4.0){newItem.style.borderColor='#10b981'}historyList.insertBefore(newItem,historyList.firstChild);if(historyList.children.length>6)historyList.removeChild(historyList.lastChild);const nextPred=(Math.random()*3+1.5).toFixed(2);predictionNumber.innerHTML=nextPred+'x';}
+        }
+        let _bacboInterval=null;
+        function initBacboBot(){
+            if (_bacboInterval) return;
+            const blueFill=document.getElementById('bacbo-blue-fill');
+            const redFill=document.getElementById('bacbo-red-fill');
+            const bluePct=document.getElementById('bacbo-blue-pct');
+            const redPct=document.getElementById('bacbo-red-pct');
+            const recoText=document.getElementById('bacbo-reco-text');
+            const probText=document.getElementById('bacbo-prob');
+            const confidence=document.getElementById('bacbo-confidence');
+            const lastUpdate=document.getElementById('bacbo-lastupdate');
+            const history=document.getElementById('bacbo-history');
+            const signalsCount=document.getElementById('bacbo-signals-count');
+            const accuracyEl=document.getElementById('bacbo-accuracy');
+            let signals=parseInt(signalsCount.innerText,10)||0;
+            _bacboInterval=setInterval(()=>{
+                const blue=Math.floor(35+Math.random()*30);
+                const red=100-blue;
+                blueFill.style.width=blue+'%';
+                redFill.style.width=red+'%';
+                bluePct.innerText=blue+'%';
+                redPct.innerText=red+'%';
+                const target=blue>red?'AZUL':'VERMELHO';
+                const prob=Math.max(blue,red);
+                recoText.innerText='APOSTAR NO '+target;
+                probText.innerText=prob+'%';
+                const diff=Math.abs(blue-red);
+                if(diff>=20){confidence.innerText='Confiança ALTA';confidence.style.color='#10b981';}
+                else if(diff>=10){confidence.innerText='Confiança MÉDIA';confidence.style.color='#f59e0b';}
+                else{confidence.innerText='Confiança BAIXA';confidence.style.color='#ef4444';}
+                const now=new Date();lastUpdate.innerText=now.toLocaleTimeString();
+                const item=document.createElement('div');item.className='history-item';item.innerText=target+' '+prob+'%';history.insertBefore(item,history.firstChild);while(history.children.length>6)history.removeChild(history.lastChild);
+                signals++;signalsCount.innerText=signals;const acc=(75+Math.random()*10).toFixed(1)+'%';accuracyEl.innerText=acc;
+            },2000);
+        }
+        let _msbInterval=null;let _msbConfirmInterval=null;
+        function initMegaSicBacBot(){
+            if (_msbInterval) return;
+            const playerPct=document.getElementById('msb-player-pct');
+            const tiePct=document.getElementById('msb-tie-pct');
+            const bankPct=document.getElementById('msb-bank-pct');
+            const recoTarget=document.getElementById('msb-reco-target');
+            const assertEl=document.getElementById('msb-assertividade');
+            const lastUpdate=document.getElementById('msb-lastupdate');
+            const history=document.getElementById('msb-history');
+            const signalsCount=document.getElementById('msb-signals-count');
+            const accuracyEl=document.getElementById('msb-accuracy');
+            const openBtn=document.getElementById('msb-open-btn');
+            const entryStatus=document.getElementById('msb-entry-status');
+            let signals=0;
+            openBtn.addEventListener('click',()=>{alert('Abrindo o jogo MEGA SIC BAC...');});
+            function normalize(a,b,c){const sum=a+b+c;return [Math.round(a/sum*100),Math.round(b/sum*100),100-Math.round(a/sum*100)-Math.round(b/sum*100)];}
+            let confirmLeft=10;openBtn.disabled=true;openBtn.classList.add('disabled');entryStatus.innerText=`A CONFIRMAR (${confirmLeft}s)`;if(!_msbConfirmInterval){_msbConfirmInterval=setInterval(()=>{confirmLeft--;if(confirmLeft>0){entryStatus.innerText=`A CONFIRMAR (${confirmLeft}s)`;}else{clearInterval(_msbConfirmInterval);_msbConfirmInterval=null;entryStatus.innerText='ENTRADA CONFIRMADA';openBtn.disabled=false;openBtn.classList.remove('disabled');}},1000);}
+            _msbInterval=setInterval(()=>{
+                const a=40+Math.random()*50;
+                const b=Math.random()*15;
+                const c=20+Math.random()*40;
+                const [p,t,k]=normalize(a,b,c);
+                playerPct.innerText=p+'%';
+                tiePct.innerText=t+'%';
+                bankPct.innerText=k+'%';
+                let target='JOGADOR';let best=p;
+                if(k>=p&&k>=t){target='CASA';best=k;}else if(t>=p&&t>=k){target='EMPATE';best=t;}
+                recoTarget.innerText=target;assertEl.innerText=best+'%';
+                const now=new Date();lastUpdate.innerText=now.toLocaleTimeString();
+                const item=document.createElement('div');item.className='history-item';item.innerText=target+' '+best+'%';history.insertBefore(item,history.firstChild);while(history.children.length>6)history.removeChild(history.lastChild);
+                signals++;signalsCount.innerText=signals;const acc=(76+Math.random()*8).toFixed(1)+'%';accuracyEl.innerText=acc;
+            },2500);
+        }
+        initGameSimulation();
+        function initAdminPanel(){
+            const listEl=document.getElementById('activation-list');
+            const emailInput=document.getElementById('admin-email-input');
+            const activateBtn=document.getElementById('admin-activate-btn');
+            const deactivateBtn=document.getElementById('admin-deactivate-btn');
+            const gameSelect=document.getElementById('admin-game-select');
+            function getList(game){try{return JSON.parse(localStorage.getItem('activation_list:'+game)||'[]');}catch{return[];}}
+            function setList(game,arr){localStorage.setItem('activation_list:'+game,JSON.stringify(arr));}
+            function render(){const game=gameSelect.value;const arr=getList(game);listEl.innerHTML='';arr.forEach(email=>{const li=document.createElement('li');li.textContent=email;li.style.color='#10b981';listEl.appendChild(li);});}
+            function addEmail(email,game){const arr=getList(game);if(!arr.includes(email)){arr.push(email);setList(game,arr);}}
+            function removeEmail(email,game){const arr=getList(game).filter(e=>e!==email);setList(game,arr);}
+            activateBtn.onclick=(ev)=>{ev.preventDefault();const email=(emailInput.value||'').trim();const game=gameSelect.value;if(!email){alert('Informe um email válido.');return;}localStorage.setItem('activation_game:'+email+':'+game,'true');addEmail(email,game);render();alert('Jogo ativado: '+game+' para '+email);};
+            deactivateBtn.onclick=(ev)=>{ev.preventDefault();const email=(emailInput.value||'').trim();const game=gameSelect.value;if(!email){alert('Informe um email válido.');return;}localStorage.removeItem('activation_game:'+email+':'+game);removeEmail(email,game);render();alert('Jogo desativado: '+game+' para '+email);};
+            gameSelect.onchange=render;render();
+        }
+    </script>
+</body>
+</html>
