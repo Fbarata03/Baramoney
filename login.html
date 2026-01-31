@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Baramoney</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <!-- Header Section -->
+        <div class="login-header">
+            <div class="brand-logo">
+                <i data-lucide="sparkles" class="sparkle-icon left"></i>
+                <span class="brand-text">baramoney</span>
+                <i data-lucide="sparkles" class="sparkle-icon right"></i>
+            </div>
+            <p class="brand-subtitle">Sistema de Sinais IA Premium</p>
+            <div class="system-status">
+                <span class="status-dot"></span>
+                <span class="status-text">Sistema Online</span>
+            </div>
+        </div>
+
+        <!-- Login Card -->
+        <div class="login-card">
+            <div class="card-header">
+                <div class="icon-box">
+                    <i data-lucide="log-in" id="headerIcon"></i>
+                </div>
+                <h2 id="cardTitle">Entrar na Conta</h2>
+            </div>
+
+            <form id="loginForm" class="login-form">
+                <div id="register-fields" class="hidden">
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" placeholder="Seu nome">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="seu@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" placeholder="........" required>
+                </div>
+
+                <div id="confirm-password-field" class="hidden form-group">
+                    <label for="confirm-password">Confirmar Senha</label>
+                    <input type="password" id="confirm-password" placeholder="........">
+                </div>
+
+                <button type="submit" class="btn-login-action" id="submitBtn">
+                    ENTRAR AGORA
+                </button>
+            </form>
+
+            <div class="divider"></div>
+
+            <div class="register-section">
+                <p>Ainda não tem conta?</p>
+                <a href="https://redirspinner.com/2IIZ?p=%2Fregistration%2F" id="register-deposit-link" target="_blank" class="btn-register-action" style="text-decoration: none;">
+                    <i data-lucide="sparkles" class="btn-icon"></i>
+                    <span>REGISTRAR E DEPOSITAR</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
